@@ -1,0 +1,23 @@
+{
+  "name": "rich_slowly",
+  "version": "1.0.0",
+  "description": "## 目录说明 ``` app 启动web服务，方便查看数据 tools 寻找标的和生成数据的工具 data 输入的原始数据 roadmap 记录执行过程和结果 ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaohuege/rich_slowly.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiaohuege/rich_slowly/issues"
+  },
+  "homepage": "https://github.com/xiaohuege/rich_slowly#readme",
+  "dependencies": {
+    "underscore": "^1.13.6"
+  }
+}
