@@ -1,3 +1,16 @@
 [
-  { "code": "512660", "name": "军工ETF" }
+  { "code": "512660", "name": "军工ETF" },
+  { "code": "513110", "name": "纳指ETF" },
+  { "code": "516160", "name": "新能源ETF" },
+  { "code": "588000", "name": "科创50ETF" },
+  { "code": "512480", "name": "半导体ETF" },
+  { "code": "512010", "name": "医药ETF" },
+  { "code": "512690", "name": "酒ETF" },
+  { "code": "513180", "name": "恒生科技指数ETF" },
+  { "code": "159920", "name": "恒生ETF" },
+  { "code": "512200", "name": "房地产ETF" },
+  { "code": "513050", "name": "中概互联网ETF" },
+  { "code": "159867", "name": "畜牧ETF" },
+  { "code": "159928", "name": "消费ETF" },
+  { "code": "512880", "name": "证券ETF" }
 ]
