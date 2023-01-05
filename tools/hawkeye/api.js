@@ -108,6 +108,12 @@ const exportObj = {
       const kline = data[code]['qfqday'];
       return formatKline(kline);
     }
+  },
+  async getAllStock() {
+    const [err, res] = await catchPromise(axios.get('https://api.gugudata.com/stock/cnsymbols?appkey=YOUR_APPKEY&pageindex=YOUR_VALUE&pagesize=YOUR_VALUE'))
+    if (!err && res && res.status == 200 && res.data && res.data.DataStatus.StatusCode == 100) {
+      return res.data.Data;
+    }
   }
 };
 module.exports = exportObj;
