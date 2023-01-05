@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/xiaohuege/rich_slowly#readme",
   "dependencies": {
+    "axios": "^1.2.2",
     "underscore": "^1.13.6"
   }
 }
