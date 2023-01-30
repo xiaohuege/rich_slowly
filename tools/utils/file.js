@@ -40,14 +40,14 @@ module.exports = {
       mkdirDeep(path.dirname(distFilePath));
       fs.writeFileSync(distFilePath, content);
     } catch (e) {
-      console.error('writeFile', e);
+      // console.error('writeFile', e);
     }
   },
   readFile(filePath) {
     try {
       return fs.readFileSync(filePath, 'utf8');
     } catch (e) {
-      console.error('readFile', e);
+      // console.error('readFile', e);
     }
   },
   copyFile(filePath, distFilePath) {

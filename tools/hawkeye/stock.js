@@ -1,39 +1,7 @@
 const api = require('./api')
 const fileUtil = require('../utils/file');
 const path = require('path');
-const _ = require('underscore');
-
-function getPrefix(code) {
-  const str = code.slice(0, 3);
-  let prefix = '';
-  let position = '';
-  switch(str) {
-    case '300':
-      prefix = 'sz';
-      position = '创业板';
-      break;
-    case '600':
-    case '601':
-    case '603':
-    case '605':
-      prefix = 'sh';
-      position = '沪市主板';
-      break;
-    case '000':
-      prefix = 'sz';
-      position = '深市主板';
-      break;
-    case '588':
-      prefix = 'sh';
-      position = '科创板';
-      break;
-  }
-  return [prefix, position];
-}
-
-async function getValidStocks(stocks) {
-  
-}
+const stockUtil = require('../utils/common');
 
 async function bootstrap() {
   // const stocks = await api.getAllStock();
@@ -47,7 +15,7 @@ async function bootstrap() {
   console.log(`总数：${stocks.length}`);
   while(idx < stocks.length) {
     const { Symbol: code, StockName } = stocks[idx];
-    const [prefix, position] = getPrefix(code);
+    const [prefix, position] = stockUtil.getStockPrefix(code);
     if (prefix) {
       const baseInfo = await api.getBaseInfo(`${prefix}${code}`);
       if (baseInfo) {

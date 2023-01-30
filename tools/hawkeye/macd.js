@@ -16,7 +16,11 @@ function calcDIF(data) {
   })
 }
 
-
+// EMA_long 慢的指数移动平均线
+// EMA_short 快的指数移动平均线
+// DIF 快线
+// DEA 慢线
+// MACD 2 * (DIF - DEA)
 module.exports = function calcMacd(data, shortTerm = 12, longTerm = 26, difTerm = 9) {
   // 计算EMA
   calcEMA(data, shortTerm, 'EMA_short', 'close');
