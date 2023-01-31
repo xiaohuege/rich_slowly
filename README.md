@@ -28,3 +28,6 @@ https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?_var=kline_dayhfq&param=sh600
 
 ### 4、获取实时资金流向
 http://qt.gtimg.cn/q=ff_sh600519
+
+### 5、雪球地址
+https://xueqiu.com/S/SZ002008

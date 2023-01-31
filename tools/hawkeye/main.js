@@ -40,6 +40,7 @@ function checkDownZero(fastLines, slowLines, avgMACD) {
 
 
 async function bootstrap() {
+  const now = new Date();
   // const baseInfo = await api.getBaseInfo('sz002008');
   // console.log(111, baseInfo[52], baseInfo[53])
   // const kline = await api.getKLine('sz002008', '2022-10-1', '2022-12-31');
@@ -55,13 +56,14 @@ async function bootstrap() {
   console.log(`总数：${stocks.length}`);
   while(true) {
     idx++;
+    console.log(`当前进度：${idx}/${stocks.length}`);
     if (idx > stocks.length - 1) break;
     const { code, name } = stocks[idx];
     // if (idx > 50) return;
-    if (name.includes('N')) continue;
+    if (name.includes('N') || name.includes('ST')) continue;
     const [prefix] = stockUtil.getStockPrefix(code);
     if (!prefix) continue;
-    const kline = await getKLine(`${prefix}${code}`, startDateStr , endDateStr);
+    const kline = await api.getKLine(`${prefix}${code}`, startDateStr , endDateStr);
     if (!kline) continue;
     const macd = calcMacd(kline);
     if (!macd || macd.length < 15) continue;
@@ -99,8 +101,9 @@ async function bootstrap() {
     if (!last) continue;
     validStocks.push({ code, name, prefix, date: last[1], macd: last[2] });
   }
-  validStocks.sort((a, b) => Math.abs(b.macd) - Math.abs(a.macd));
-  console.log(validStocks);
+  validStocks.sort((a, b) => a.date >= b.date ? -1 : Math.abs(b.macd) - Math.abs(a.macd));
+  // console.log(validStocks);
+  console.log(`有效目标数：${validStocks.length};耗时:${parseInt((new Date - now)/1000)}s`);
   fileUtil.writeFile(path.resolve(__dirname, `../../record/${endDateStr}.json`), JSON.stringify(validStocks, null, 2));
 }
 
