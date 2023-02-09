@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>符合条件的标的</title>
+  <style>
+    #container {
+      padding: 30px;
+      font-size: 20px;
+    }
+    .item {
+      display: block;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+
+  </div>
+  <script src="index.js"></script>
+  <script>
+    var container = document.getElementById('container');
+    var html = '';
+    data.forEach(({ code, date, name, prefix }) => {
+      var text = name + '(' + code + ')' + '[' + date + ']'
+      var href = 'https://xueqiu.com/S/' + (prefix + code).toUpperCase()
+      html += '<a class="item" target="_blank" href ="' + href + '">' + text + '</a>'
+    })
+    container.innerHTML = html;
+    console.log(html)
+  </script>
+</body>
+</html>

@@ -1,3 +1,4 @@
-[{
-  "code": "", "name": "xxxxxx", "in_price": 0.85, "in_date": "2023-02-01", "count": 100000, "out_price": "", "out_date": ""
-}]
+[
+  { "code": "512480", "name": "半导体ETF", "in_price": 0.886, "in_date": "2023-02-08", "count": 300000, "out_price": "", "out_date": "" },
+  { "code": "600036", "name": "招商银行", "in_price": 38.9, "in_date": "2023-02-08", "count": 5000, "out_price": "", "out_date": "" }
+]
