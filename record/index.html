@@ -24,13 +24,13 @@
   <script>
     var container = document.getElementById('container');
     var html = '';
+    data.sort((a, b) => new Date(b.date) - new Date(a.date));
     data.forEach(({ code, date, name, prefix }) => {
       var text = name + '(' + code + ')' + '[' + date + ']'
       var href = 'https://xueqiu.com/S/' + (prefix + code).toUpperCase()
       html += '<a class="item" target="_blank" href ="' + href + '">' + text + '</a>'
     })
     container.innerHTML = html;
-    console.log(html)
   </script>
 </body>
 </html>
